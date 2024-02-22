@@ -17,6 +17,33 @@ struct Product: Codable, Identifiable, Hashable {
     let discount       : Int
     let сharacteristics: Characteristics
     let reviews        : Reviews
+
+}
+
+struct Characteristics: Codable, Hashable {
+    let production: String
+    let energyValue: [Int]
+    let fats: Double
+    let squirrels: Double
+    let carbohydrates: Double
+}
+
+struct Reviews: Codable, Hashable {
+    let rating: Double
+    let count: Int
+    let review: [Review]
+}
+
+struct Review: Codable, Hashable {
+    var id = UUID().uuidString
+    let name: String
+    let date: String
+    let description: String
+    let rating: Int
+}
+
+
+extension Product {
     
     static var product: Product = Product(
         name    : "Добавка \"Липа к чаю\"",
@@ -81,26 +108,5 @@ struct Product: Codable, Identifiable, Hashable {
             )
         )
     ]
-}
-
-struct Characteristics: Codable, Hashable {
-    let production: String
-    let energyValue: [Int]
-    let fats: Double
-    let squirrels: Double
-    let carbohydrates: Double
-}
-
-struct Reviews: Codable, Hashable {
-    let rating: Double
-    let count: Int
-    let review: [Review]
-}
-
-struct Review: Codable, Hashable {
-    var id = UUID().uuidString
-    let name: String
-    let date: String
-    let description: String
-    let rating: Int
+    
 }

@@ -13,9 +13,10 @@
 		F5DFF89D2B87398F00AC37B6 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFF8962B87398E00AC37B6 /* TabBar.swift */; };
 		F5DFF89E2B87398F00AC37B6 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFF8972B87398E00AC37B6 /* DetailView.swift */; };
 		F5DFF89F2B87398F00AC37B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFF8982B87398E00AC37B6 /* ContentView.swift */; };
-		F5DFF8A02B87398F00AC37B6 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFF89A2B87398F00AC37B6 /* Extension.swift */; };
 		F5DFF8A12B87398F00AC37B6 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFF89B2B87398F00AC37B6 /* Tab.swift */; };
 		F5DFF8A22B87398F00AC37B6 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFF89C2B87398F00AC37B6 /* Product.swift */; };
+		F5DFF8A62B873F5400AC37B6 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFF8A52B873F5400AC37B6 /* Double.swift */; };
+		F5DFF8A82B873F6900AC37B6 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFF8A72B873F6900AC37B6 /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,9 +27,10 @@
 		F5DFF8962B87398E00AC37B6 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		F5DFF8972B87398E00AC37B6 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		F5DFF8982B87398E00AC37B6 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		F5DFF89A2B87398F00AC37B6 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		F5DFF89B2B87398F00AC37B6 /* Tab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		F5DFF89C2B87398F00AC37B6 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		F5DFF8A52B873F5400AC37B6 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		F5DFF8A72B873F6900AC37B6 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,10 +63,11 @@
 		F5DFF8842B87395A00AC37B6 /* MySpar */ = {
 			isa = PBXGroup;
 			children = (
-				F5DFF8992B87398F00AC37B6 /* Model */,
-				F5DFF8952B87398E00AC37B6 /* View */,
-				F5DFF8942B87397900AC37B6 /* Assets */,
 				F5DFF8932B87397100AC37B6 /* App */,
+				F5DFF8942B87397900AC37B6 /* Assets */,
+				F5DFF8952B87398E00AC37B6 /* View */,
+				F5DFF8992B87398F00AC37B6 /* Model */,
+				F5DFF8A32B873F1F00AC37B6 /* Extension */,
 			);
 			path = MySpar;
 			sourceTree = "<group>";
@@ -107,11 +110,19 @@
 		F5DFF8992B87398F00AC37B6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F5DFF89A2B87398F00AC37B6 /* Extension.swift */,
 				F5DFF89B2B87398F00AC37B6 /* Tab.swift */,
 				F5DFF89C2B87398F00AC37B6 /* Product.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F5DFF8A32B873F1F00AC37B6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F5DFF8A72B873F6900AC37B6 /* View.swift */,
+				F5DFF8A52B873F5400AC37B6 /* Double.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,10 +195,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5DFF8A02B87398F00AC37B6 /* Extension.swift in Sources */,
 				F5DFF8862B87395A00AC37B6 /* MySparApp.swift in Sources */,
+				F5DFF8A62B873F5400AC37B6 /* Double.swift in Sources */,
 				F5DFF89E2B87398F00AC37B6 /* DetailView.swift in Sources */,
 				F5DFF8A12B87398F00AC37B6 /* Tab.swift in Sources */,
+				F5DFF8A82B873F6900AC37B6 /* View.swift in Sources */,
 				F5DFF89F2B87398F00AC37B6 /* ContentView.swift in Sources */,
 				F5DFF89D2B87398F00AC37B6 /* TabBar.swift in Sources */,
 				F5DFF8A22B87398F00AC37B6 /* Product.swift in Sources */,
