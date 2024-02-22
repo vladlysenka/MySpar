@@ -12,11 +12,13 @@ struct DetailView: View {
     
     let pricePerItem: Double = 55.9
     
+    let product: Product
+    
     var total: Double {
         return Double(quantity) * pricePerItem
     }
     
-    let product: Product
+
     
     var body: some View {
         ScrollView(.vertical) {
@@ -328,6 +330,6 @@ struct DetailView: View {
 
 #Preview {
     NavigationView {
-        DetailView(product: Product.product)
+        DetailView(product: Product.sample)
     }
 }
