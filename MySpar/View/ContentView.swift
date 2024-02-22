@@ -7,7 +7,7 @@ struct ContentView: View {
         NavigationView {
             LazyVGrid(columns: Array(repeating: GridItem(), count: 2)) {
                 ForEach(Product.samples, id: \.self) { product in
-                    NavigationLink { DetailView(product: product) } label: { LabelView() }
+                    NavigationLink { ProductDetail(product: product) } label: { LabelView() }
                 }
                 
                 ForEach(1...3, id: \.self) { _ in

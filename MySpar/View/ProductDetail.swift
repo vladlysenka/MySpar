@@ -3,7 +3,7 @@
 import SwiftUI
 
 
-struct DetailView: View {
+struct ProductDetail: View {
     @Environment(\.presentationMode) var presentationMode
     
     @State private var rating: Double = 4.0
@@ -330,6 +330,6 @@ struct DetailView: View {
 
 #Preview {
     NavigationView {
-        DetailView(product: Product.sample)
+        ProductDetail(product: Product.sample)
     }
 }
