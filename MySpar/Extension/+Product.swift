@@ -18,9 +18,9 @@ extension Product {
         discount: 5,
         сharacteristics: Characteristics(
             production: "Россия, Краснодарский край",
-            energyValue: [25, 105],
+            energyValue: "25 ккал, 105 кДж",
             fats: 0.1,
-            squirrels: 1.3,
+            protein: 1.3,
             carbohydrates: 3.3
         ),
         reviews: Reviews(
@@ -51,9 +51,9 @@ extension Product {
             discount: 5,
             сharacteristics: Characteristics(
                 production: "Россия, Краснодарский край",
-                energyValue: [25, 105],
+                energyValue: "25 ккал, 105 кДж",
                 fats: 0.1,
-                squirrels: 1.3,
+                protein: 1.3,
                 carbohydrates: 3.3
             ),
             reviews: Reviews(

@@ -14,11 +14,11 @@ struct ProductDetail: View {
     
     let product: Product
     
+    
     var total: Double {
         return Double(quantity) * pricePerItem
     }
     
-
     
     var body: some View {
         ScrollView(.vertical) {
@@ -83,51 +83,24 @@ struct ProductDetail: View {
                     Text("Описание")
                         .fontWeight(.semibold)
                     
-                    Text("Флавоноиду липового цвета обладают противовоспалительным действием, способствуют укреплению стенки сосудов.")
+                    Text(product.description)
                         .font(.subheadline)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
                 VStack(alignment: .leading, spacing: 15) {
                     Text("Основные характеристики")
-                        .fontWeight(.semibold)
+                        .font(.system(size: 16, weight: .semibold, design: .rounded))
                     
-                    HStack {
-                        Text("Производство")
-                        Spacer()
-                        Text("Россия, Краснодарский край")
+                    СharacteristicsСell(title: "Производство", subtitle: product.сharacteristics.production)
+                    СharacteristicsСell(title: "Энергетическая ценность, ккал/100 г", subtitle: product.сharacteristics.energyValue)
+                    СharacteristicsСell(title: "Жиры/100 г", subtitle: product.сharacteristics.fats.specifier(for: 1) + " г")
+                    СharacteristicsСell(title: "Белки/100 г", subtitle: product.сharacteristics.protein.specifier(for: 1) + " г")
+                    СharacteristicsСell(title: "Углеводы/100 г", subtitle: product.сharacteristics.carbohydrates.specifier(for: 1) + " г")
+                    
+                    Button("Все характеристики") {
+                        print("Раскрыть")
                     }
-                    .font(.subheadline)
-                    
-                    HStack {
-                        Text("Энергетическая ценность, ккал/100 г")
-                        Spacer()
-                        Text("25 ккал, 105 кДж")
-                    }
-                    .font(.subheadline)
-                    
-                    HStack {
-                        Text("Жиры/100 г")
-                        Spacer()
-                        Text("0.1 г")
-                    }
-                    .font(.subheadline)
-                    
-                    HStack {
-                        Text("Белки/100 г")
-                        Spacer()
-                        Text("1.3 г")
-                    }
-                    .font(.subheadline)
-                    
-                    HStack {
-                        Text("Углеводы/100 г")
-                        Spacer()
-                        Text("3.3 г")
-                    }
-                    .font(.subheadline)
-                    
-                    Button("Все характеристики") { print("Раскрыть")}
                         .font(.system(size: 16, weight: .bold, design: .rounded))
                         .foregroundColor(.green)
                 }
@@ -149,7 +122,7 @@ struct ProductDetail: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             ForEach(0...10, id: \.self) { _ in
-                                recall()
+                                Recall()
                             }
                         }
                     }
@@ -291,7 +264,7 @@ struct ProductDetail: View {
         .navigationBarBackButtonHidden()
     }
     
-    @ViewBuilder func recall() -> some View {
+    @ViewBuilder func Recall() -> some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
                 .shadow(radius: 1)
@@ -324,6 +297,21 @@ struct ProductDetail: View {
         .frame(width: 240, height: 150)
         .padding(5)
         .foregroundColor(.white)
+    }
+    
+    @ViewBuilder func СharacteristicsСell(title: String, subtitle: String ) -> some View {
+        HStack(alignment: .top) {
+            Text(title)
+                .font(.system(size: 14, weight: .regular, design: .rounded))
+                .frame(width: 150, alignment: .leading)
+            
+            Spacer()
+            
+            Text(subtitle)
+                .font(.system(size: 12, weight: .light, design: .rounded))
+
+        }
+        .font(.subheadline)
     }
     
 }

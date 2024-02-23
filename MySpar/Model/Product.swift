@@ -21,10 +21,10 @@ struct Product: Codable, Identifiable, Hashable {
 }
 
 struct Characteristics: Codable, Hashable {
-    let production: String
-    let energyValue: [Int]
-    let fats: Double
-    let squirrels: Double
+    let production   : String
+    let energyValue  : String
+    let fats         : Double
+    let protein      : Double
     let carbohydrates: Double
 }
 
