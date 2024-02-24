@@ -7,7 +7,7 @@ struct ProductDetail: View {
     @Environment(\.presentationMode) var presentationMode
     
     @State private var rating: Double = 4.0
-    @State private var activeSegmented: String = "Кг"
+    @State private var selection: String = "Кг"
     @State private var quantity: Int = 1
     
     let pricePerItem: Double = 55.9
@@ -19,6 +19,7 @@ struct ProductDetail: View {
         return Double(quantity) * pricePerItem
     }
     
+    @State private var feedback: Bool = false
     
     var body: some View {
         ScrollView(.vertical) {
@@ -57,7 +58,8 @@ struct ProductDetail: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 12)
                         
-                        Text("-5 %")
+                        Text("-\(product.discount) %")
+                            .font(.system(size: 14, weight: .semibold, design: .rounded))
                             .foregroundColor(.white)
                     }
                     .frame(width: 80, height: 30)
@@ -131,6 +133,7 @@ struct ProductDetail: View {
                 .padding(.top)
                 
                 Button {
+                    feedback.toggle()
                     print("Отзыв")
                 } label: {
                     ZStack {
@@ -145,9 +148,7 @@ struct ProductDetail: View {
                     }
                 }
                 .padding(.top)
-                
-                
-                
+    
             }
             .padding()
         }
@@ -159,7 +160,7 @@ struct ProductDetail: View {
                     .foregroundColor(.white)
                     .shadow(radius: 3)
                 VStack {
-                    Picker("", selection: $activeSegmented) {
+                    Picker("", selection: $selection) {
                         Text("Шт")
                             .tag("Шт")
                         Text("Кг")
@@ -262,6 +263,9 @@ struct ProductDetail: View {
         }
         .ignoresSafeArea(.container, edges: .bottom)
         .navigationBarBackButtonHidden()
+        .sheet(isPresented: $feedback) {
+            // FeedbackView
+        }
     }
     
     @ViewBuilder func Recall() -> some View {
